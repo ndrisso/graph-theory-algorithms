@@ -11,7 +11,7 @@ class Graph
       result = Hash.new { |h, k| h[k] = [] }
       nodes.each_with_object(result) do |node, result|
         edges.each do |edge|
-          result[node].push edge if edge.origin == node
+          result[node].push edge if edge.source == node
         end
       end
       result
@@ -19,4 +19,4 @@ class Graph
   end
 end
 
-Edge = Struct.new(:origin, :destiny, :weight)
+Edge = Struct.new(:source, :target, :weight)
