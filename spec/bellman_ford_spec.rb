@@ -1,5 +1,5 @@
 require_relative '../algorithms/bellman_ford'
-require_relative '../util/graph'
+require_relative '../data-structures/graph'
 
 RSpec.describe BellmanFord do
   context 'when a DAG is provided' do
