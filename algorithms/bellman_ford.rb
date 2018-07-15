@@ -2,8 +2,8 @@ class BellmanFord
   attr_accessor :graph, :source, :target
 
   def initialize(graph, source, target)
-    self.graph       = graph
-    self.source      = source
+    self.graph = graph
+    self.source = source
     self.target = target
   end
 
