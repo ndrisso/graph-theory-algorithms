@@ -9,11 +9,11 @@ class BellmanFord
 
   def apply
     distances = []
-    graph.nodes.each { |node| distances[node] = Float::INFINITY }
+    (0...graph.nodes).each { |node| distances[node] = Float::INFINITY }
     distances[source] = 0
 
     # Relax edges
-    graph.nodes.size.times do
+    graph.nodes.times do
       graph.edges.each do |edge|
         if distances[edge.target] > distances[edge.source] + edge.weight
           distances[edge.target] = distances[edge.source] + edge.weight
