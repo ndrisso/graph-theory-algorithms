@@ -5,29 +5,14 @@ class Graph
     self.nodes = nodes # amount
     self.edges = edges
   end
-
-  def adjacency_list
-    @adjacency_list ||= begin
-      result = Hash.new { |h, k| h[k] = [] }
-      (0...nodes).each_with_object(result) do |node, result|
-        edges.each do |edge|
-          result[node].push edge.endpoint_2 if edge.endpoint_1 == node
-          result[node].push edge.endpoint_1 if edge.endpoint_2 == node
-        end
-      end
-      result
-    end
-  end
 end
 
 class DirectedGraph < Graph
   def adjacency_list
     @adjacency_list ||= begin
       result = Hash.new { |h, k| h[k] = [] }
-      (0...nodes).each_with_object(result) do |node, result|
-        edges.each do |edge|
-          result[node].push edge if edge.source == node
-        end
+      (0...nodes).each do |node|
+        edges.each { |e| result[node] << e if e.source == node }
       end
       result
     end

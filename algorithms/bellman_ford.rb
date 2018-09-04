@@ -24,8 +24,7 @@ class BellmanFord
     # Check if there is a negative cycle
     graph.edges.each do |edge|
       if distances[edge.target] > distances[edge.source] + edge.weight
-        puts 'negative cycle found!'
-        return -1
+        raise 'Negative cycle found!'
       end
     end
 
