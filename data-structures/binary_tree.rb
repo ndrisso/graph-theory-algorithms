@@ -15,7 +15,7 @@ class BinaryTree
     raise "Not found #{value}" if result[:node].nil?
 
     if result[:node].left_child.nil? && result[:node].right_child.nil?
-      # no childs, no problem
+      # no childs, no problems
       result[:parent].value > result[:node].value ?
         result[:parent].left_child = nil : result[:parent].right_child = nil
     elsif result[:node].left_child.nil? ^ result[:node].right_child.nil?

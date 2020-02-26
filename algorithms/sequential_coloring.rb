@@ -1,4 +1,4 @@
-class SecuentialColoring
+class SequentialColoring
   attr_reader :graph
 
   def initialize(graph)
